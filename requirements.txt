@@ -6,3 +6,4 @@ flwr
 flwr[simulations]
 torchvision
 scikit-learn
+seaborn 
