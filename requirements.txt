@@ -4,3 +4,5 @@ matplotlib
 torch
 flwr
 flwr[simulations]
+torchvision
+scikit-learn
