@@ -1,4 +1,3 @@
-# model.py
 import torch.nn as nn
 import torch
 
@@ -9,9 +8,9 @@ class MLP(nn.Module):
             nn.Linear(input_dim, hidden_dim),
             nn.ReLU(),
             nn.Dropout(0.2),
-            nn.Linear(hidden_dim, hidden_dim//2),
+            nn.Linear(hidden_dim, hidden_dim // 2),
             nn.ReLU(),
-            nn.Linear(hidden_dim//2, num_classes)
+            nn.Linear(hidden_dim // 2, num_classes)
         )
 
     def forward(self, x):
