@@ -28,7 +28,8 @@ class FlowerClient(fl.client.NumPyClient):
         self.set_parameters(parameters)
         self.model.train()
         optimizer = optim.Adam(self.model.parameters(), lr=1e-3)
-        for _ in range(self.local_epochs):  
+        epochs = config.get("local_epochs", self.local_epochs) if config else self.local_epochs
+        for _ in range(epochs):  
             for Xb, yb in self.train_loader:
                 Xb, yb = Xb.to(self.device), yb.to(self.device)
                 optimizer.zero_grad()
